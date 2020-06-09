@@ -5,9 +5,9 @@ using namespace std;
 int main()
 {	setlocale(LC_ALL, "ptb");
     int carro,num1,num2,opcao,contador,res;
-    char resposta,escolha;
+    char resposta,escolha,escolho;
     string marca,resposta1,inicio;
-    double Valor,IPI,taxa,total, desc;
+    float Valor,IPI,taxa,total, desc;
                
     IPI = 0.08;
     desc =  3,5/100;
@@ -18,19 +18,21 @@ int main()
     cout<< "\n Escolha o modelo do veiculo :\n";
     cout<< "\n  [1] Celta 1.0   /  [2]Gol 1.0 G5 /  [3]Palio 1.0 \n";
     cin>> carro;
-    switch(carro)
-       {
-           case 1 :  goto escolha;
-           case 2 :  goto escolha;
-           case 3 :  goto escolha;
-		    		
-		    escolha:
-            Valor = 30000.00;
-            marca = "Celta 1.0 ";
-              cout << "O veiculo escolhido foi "<<marca<<"\n";
-              cout << " este e o valor do seu veiculo R$ "<< Valor<<"\n";
-              cout<< "\n deseja inserir opcionais neste modelo de carro (Sim (1) / Não (0))?";
-              cin>> res;
+    	switch(carro)
+       {	
+           
+	    		
+		    case 1: carro;
+			case 2: carro;
+			case 3: carro;
+			 {
+			
+            	Valor = 30.000;
+            	marca = "Celta 1.0 ";
+              	cout << "O veiculo escolhido foi "<<marca<<"\n";
+              	cout << " este e o valor do seu veiculo R$ "<< Valor<<"\n";
+              	cout<< "\n deseja inserir opcionais neste modelo de carro (Sim (1) / Não (0))?";
+              	cin>> res;
               		if (res == 0){
               			 contador = 0;
                             taxa = Valor * IPI;
@@ -63,7 +65,6 @@ int main()
                            cout<< "\n 1- Trio Eletrico (Alarme, Vidro e Trava eletrica) Custa 2% do valor + IPI";
                            cout<< "\n 2- Ar-Condicionado R$ 2%" ;
                            cout<< "\n 3- Direcao hidraulica R$ 2%";
-                           cout<< "\n 4- Completo (itens 1,2 e 3 juntos) R$";
                            cout<< "\n 0- nenhum adicional";
                            cout<< "\nNa compra do modelo completo ganhará um grande desconto\n";
                            cout<< "\n Pagara com o desconto de 3,5% do valor total com adicional e IPI incluso\n";
@@ -125,7 +126,7 @@ int main()
                             cout<<"\nQuantidade de Opcional selecionado "<< contador<<"\n";
                                  }
                     else{
-                            parada1:
+                            case 1:
                             cout<<"\nVoce ja selecionou o trio eletrico, selecione outro opcional";
                             cout<< "\nVoce ja selecionou o ar-condicionado, selecione outro opcional";
                             cout<< "\n 3- Direcao hidraulica R$ 2%";
@@ -146,23 +147,29 @@ int main()
                     if (res == 1){
                             cout<<"\nQuantidade de Opcional selecionado "<< contador<<"\n";
                             system("pause");
-                                 }
-                    else{
-                            goto inicio;
-							}	
+                                 }}
+                     if (res == 0) {
+                    	goto inicio;
+					}
+					
+                    
 					 	    system("pause");
                                         }
+                                     	break;   
+                                     }
+				}
                     	    		
-                        switch (opcao) {
+            switch (carro) {
 						 
 							 
-		    					case 3:
-            					Valor = 45000.00;
+		    	 case 2:  {
+								
+						Valor = 45000.00;
             					marca = "Gol G5 1.0 ";
-            					  cout << "O veiculo escolhido foi "<<marca<<"\n";
-            					  cout << " este e o valor do seu veiculo R$ "<< Valor<<"\n";
-              						cout<< "\n deseja inserir opcionais neste modelo de carro (Sim (1) / Não (0))?";
-              						cin>> res;
+            					cout << "O veiculo escolhido foi "<<marca<<"\n";
+            					cout << " este e o valor do seu veiculo R$ "<< Valor<<"\n";
+              					cout<< "\n deseja inserir opcionais neste modelo de carro (Sim (1) / Não (0))?";
+              					cin>> res;
               		if (res == 0){
               			 contador = 0;
                             taxa = Valor * IPI;
@@ -260,7 +267,7 @@ int main()
                             cout<<"\nQuantidade de Opcional selecionado "<< contador<<"\n";
                                  }
                     else{
-                            parada2:
+                             case 3:
                             cout<<"\nVoce ja selecionou o trio eletrico, selecione outro opcional";
                             cout<< "\nVoce ja selecionou o ar-condicionado, selecione outro opcional";
                             cout<< "\n 3- Direcao hidraulica  +R$ 2%";
@@ -289,10 +296,10 @@ int main()
                     	    		 break;
                             		 }
                             		 
-                    switch (opcao) {
+                    switch (carro) {
 						 
 							 
-		    					escolha2:
+		    					case 3 :  {
             					Valor = 40000.00;
             					marca = "Palio 1.0 ";
             					  cout << "O veiculo escolhido foi "<<marca<<"\n";
@@ -448,3 +455,4 @@ int main()
        							 			 }
                                          }
                                }
+                           
